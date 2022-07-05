@@ -19,7 +19,6 @@
       position: absolute;
       bottom: -10px;
       right: 10px;
-      background: blue;
       background: $white;
       width: 60px;
       height: 60px;
@@ -60,44 +59,4 @@
     }
   }
 }
-.loading-class{
-  background-color: #f1f1f1;
-  background: linear-gradient(
-    100deg,
-    rgba(255, 255, 255, 0) 40%,
-    rgba(255, 255, 255, .5) 50%,
-    rgba(255, 255, 255, 0) 60%
-  ) #f1f1f1;
-  background-size: 200% 100%;
-  background-position-x: 180%;
-  animation: 1s loading ease-in-out infinite;
-}
-.loading {
-  @extend .loading-class;
-  .vendor-background-wrapper{
-    position: relative;
-    height: 130px;
-    @extend .loading-class;
-  }
-  .vendor-body{
-    padding: 10px;
-    .vendor-main-information{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 5px;
-      @extend .loading-class;
-    }
-    .vendor-description{
-      font-size: 80%;
-      margin-bottom: 5px;
-      @extend .loading-class;
-    }
-  }
-}
 
-@keyframes loading {
-  to {
-    background-position-x: -20%;
-  }
-}
