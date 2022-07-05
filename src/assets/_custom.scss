@@ -1,0 +1,11 @@
+.vendors__wrapper{
+  width: 560px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 492px){
+  .vendors__wrapper{
+    width: 95%;
+  }
+}

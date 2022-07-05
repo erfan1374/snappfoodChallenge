@@ -1,0 +1,14 @@
+.header-vendors{
+  background: $white;
+  width: 100%;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  h3.vendor-count{
+    color: $gray-900;
+    padding: 15px;
+    margin: 0;
+    font-weight: 900 !important;
+  }
+}
