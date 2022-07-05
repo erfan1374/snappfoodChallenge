@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
+  entry: '/src/index.js',
   output: {
     path: path.join(__dirname, "/dist"), // the bundle output path
     filename: "[name].[contenthash].js", // the name of the bundle
@@ -10,7 +11,7 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: "src/index.html", // to import index.html file inside index.js
+      template: "src/static/index.html", // to import index.html file inside index.js
     }),
     new MiniCssExtractPlugin({
       filename: "style/[name].[contenthash].css",
@@ -37,16 +38,14 @@ module.exports = {
       {
         test: /\.(png)$/, // to import images and fonts
         loader: "url-loader",
-        options: { limit: false, name: '[name].[contenthash].[ext]',  outputPath: 'image/' },
+        options: { name: '[name].[contenthash].[ext]',  outputPath: 'image/' },
       },
       {
-        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {name: '[name].[contenthash].[ext]',  outputPath: 'fonts/'}
-          },
-        ],
+        test: /\.(woff|woff2|eot|ttf|svg)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/[hash][ext][query]'
+        }
       }
     ],
   },

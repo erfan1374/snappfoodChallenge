@@ -10,8 +10,10 @@ const Vendors = () => {
   const [total, setTotal] = useState(0)
 
   window.onscroll = () => {
-    if (window.innerHeight + document.documentElement.scrollTop >= document.documentElement.offsetHeight) {
+    console.log(Math.round(window.innerHeight + document.documentElement.scrollTop), document.documentElement.offsetHeight)
+    if (Math.round(window.innerHeight + document.documentElement.scrollTop) >= document.documentElement.offsetHeight) {
       if(!noData) {
+        console.log('go next')
         getVendorList(page);
       }
     }
@@ -23,7 +25,6 @@ const Vendors = () => {
 
   const getVendorList = (page) => {
     setLoading(true);
-    setTimeout(() => {
       api.vendorList.getAll({
         page_size: 10,
         page,
@@ -42,7 +43,6 @@ const Vendors = () => {
       }).finally(() =>{
           setLoading(false);
       })
-    }, 150)
   }
   return (
     <>
