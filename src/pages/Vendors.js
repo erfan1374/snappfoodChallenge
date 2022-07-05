@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import api from './../../api'
 import VendorHeader from "../components/VendorHeader";
 import VendorItem from "../components/VendorItem";
+import VendorItemLoading from "../components/VendorItemLoading";
 const Vendors = () => {
   const [vendorList, setVendorList] = useState([]);
   const [page, setPage] = useState(1);
@@ -51,7 +52,7 @@ const Vendors = () => {
         {vendorList.map((item, index) => (
           <VendorItem value={item.data} key={index}/>
         ))}
-        {loading ? 'loading' : null}
+        {loading ? <VendorItemLoading/> : null}
       </article>
     </>
   )

@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Vendors from "./pages/Vendors";
+import NotFoundPage from "./components/NotFoundPage";
 const App = () => {
 
   return (
@@ -12,7 +13,7 @@ const App = () => {
             caseSensitive={false}
             element={<Vendors/>}
           ></Route>
-          <Route path="*" element={<p>404 page</p>}></Route>
+          <Route path="*" element={<NotFoundPage/>}></Route>
         </Routes>
       </Router>
     </>
