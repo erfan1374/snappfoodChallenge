@@ -1,2 +1,2 @@
 # snappfoodChallenge
-see project from develop or master branch
+see project on develop or master branch
